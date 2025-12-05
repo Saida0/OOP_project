@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.simulation_of_bangladesh_bank.saida.controller.RevenueMonitoringController">
+   <padding>
+      <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+   </padding>
+   <children>
+      <!-- Page Header -->
+      <VBox spacing="5.0">
+         <children>
+            <Label text="Revenue Monitoring">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label text="Monitor government revenue collection and tax administration">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      
+      <!-- Revenue Overview -->
+      <HBox spacing="20.0">
+         <children>
+            <VBox alignment="CENTER" spacing="10.0" HBox.hgrow="ALWAYS">
+               <padding>
+                  <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+               </padding>
+               <children>
+                  <Label text="Revenue Target">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblTarget" text="৳0">
+                     <font>
+                        <Font name="System Bold" size="28.0" />
+                     </font>
+                  </Label>
+                  <ProgressBar fx:id="progressRevenue" prefHeight="10.0" prefWidth="180.0" progress="0.0" />
+                  <Label fx:id="lblProgress" text="0% Achieved">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            
+            <VBox spacing="10.0" HBox.hgrow="ALWAYS">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+               <children>
+                  <Label text="">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label text="Tax Collection">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblTaxCollection" text="৳0">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            
+            <VBox spacing="10.0" HBox.hgrow="ALWAYS">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+               <children>
+                  <Label text="">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label text="Non-Tax Revenue">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblNonTaxRevenue" text="৳0">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            
+            <VBox spacing="10.0" HBox.hgrow="ALWAYS">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+               <children>
+                  <Label text="">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label text="Shortfall">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblShortfall" text="৳0">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      
+      <!-- Input Form -->
+      <VBox spacing="20.0">
+         <padding>
+            <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+         </padding>
+         <children>
+            <Label text="Revenue Entry">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            
+            <HBox spacing="20.0">
+               <children>
+                  <VBox spacing="8.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="Tax Collection (৳)">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtTaxCollection" prefHeight="40.0" promptText="Enter tax collection amount" />
+                     </children>
+                  </VBox>
+                  
+                  <VBox spacing="8.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="Non-Tax Revenue (৳)">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtNonTaxRevenue" prefHeight="40.0" promptText="Enter non-tax revenue" />
+                     </children>
+                  </VBox>
+                  
+                  <VBox spacing="8.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="Revenue Target (৳)">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtRevenueTarget" prefHeight="40.0" promptText="Enter target amount" />
+                     </children>
+                  </VBox>
+                  
+                  <VBox spacing="8.0">
+                     <children>
+                        <Label text="Reporting Period">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="cmbPeriod" prefHeight="40.0" prefWidth="150.0" promptText="Select period" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            
+            <HBox spacing="15.0">
+               <children>
+                  <Button fx:id="btnValidate" mnemonicParsing="false" onAction="#validateAgainstTarget" prefHeight="45.0" prefWidth="180.0" text="Validate Target">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnReport" mnemonicParsing="false" onAction="#generatePerformanceReport" prefHeight="45.0" prefWidth="200.0" text="Generate Report">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnShortfall" mnemonicParsing="false" onAction="#identifyShortfalls" prefHeight="45.0" prefWidth="180.0" text="Identify Shortfalls">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      
+      <!-- Revenue History Table -->
+      <VBox spacing="15.0" VBox.vgrow="ALWAYS">
+         <padding>
+            <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+         </padding>
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="20.0">
+               <children>
+                  <Label text="Revenue History" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Button mnemonicParsing="false" onAction="#refreshTable" prefHeight="35.0" text="Refresh">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            
+            <TableView fx:id="tblRevenue" VBox.vgrow="ALWAYS">
+               <columns>
+                  <TableColumn fx:id="colPeriod" prefWidth="120.0" text="Period" />
+                  <TableColumn fx:id="colTax" prefWidth="150.0" text="Tax Collection" />
+                  <TableColumn fx:id="colNonTax" prefWidth="150.0" text="Non-Tax Revenue" />
+                  <TableColumn fx:id="colTarget" prefWidth="150.0" text="Target" />
+                  <!-- Use text that does not start with '%' to avoid ResourceBundle lookup errors -->
+                  <TableColumn fx:id="colAchieved" prefWidth="100.0" text="Achieved (%)" />
+                  <TableColumn fx:id="colStatus" prefWidth="100.0" text="Status" />
+               </columns>
+            </TableView>
+         </children>
+      </VBox>
+   </children>
+</VBox>

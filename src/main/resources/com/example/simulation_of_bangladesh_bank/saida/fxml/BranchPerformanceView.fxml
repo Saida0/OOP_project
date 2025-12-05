@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="20.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.simulation_of_bangladesh_bank.saida.controller.BranchPerformanceController">
+   <padding>
+      <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+   </padding>
+   <children>
+
+      <!-- Page Header -->
+      <VBox spacing="5.0">
+         <children>
+            <Label style="-fx-text-fill: black; -fx-font-weight: bold;" text="Branch Performance Monitoring">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label style="-fx-text-fill: black;" text="Monitor branch performance, generate rankings, and identify areas for improvement">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+
+      <!-- Overview Cards -->
+      <HBox spacing="20.0">
+         <children>
+            <VBox spacing="10.0" style="-fx-background-color: white;" HBox.hgrow="ALWAYS">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+               <children>
+                  <Label style="-fx-text-fill: black;" text="">
+                     <font><Font size="24.0" /></font>
+                  </Label>
+                  <Label style="-fx-text-fill: black;" text="Total Branches">
+                     <font><Font size="12.0" /></font>
+                  </Label>
+                  <Label fx:id="lblTotalBranches" style="-fx-text-fill: black; -fx-font-weight: bold;" text="0">
+                     <font><Font name="System Bold" size="24.0" /></font>
+                  </Label>
+               </children>
+            </VBox>
+
+            <VBox spacing="10.0" style="-fx-background-color: white;" HBox.hgrow="ALWAYS">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+               <children>
+                  <Label style="-fx-text-fill: black;" text="">
+                     <font><Font size="24.0" /></font>
+                  </Label>
+                  <Label style="-fx-text-fill: black;" text="Top Performers">
+                     <font><Font size="12.0" /></font>
+                  </Label>
+                  <Label fx:id="lblTopPerformers" style="-fx-text-fill: black; -fx-font-weight: bold;" text="0">
+                     <font><Font name="System Bold" size="24.0" /></font>
+                  </Label>
+               </children>
+            </VBox>
+
+            <VBox spacing="10.0" style="-fx-background-color: white;" HBox.hgrow="ALWAYS">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+               <children>
+                  <Label style="-fx-text-fill: black;" text="">
+                     <font><Font size="24.0" /></font>
+                  </Label>
+                  <Label style="-fx-text-fill: black;" text="Needs Improvement">
+                     <font><Font size="12.0" /></font>
+                  </Label>
+                  <Label fx:id="lblWeakBranches" style="-fx-text-fill: black; -fx-font-weight: bold;" text="0">
+                     <font><Font name="System Bold" size="24.0" /></font>
+                  </Label>
+               </children>
+            </VBox>
+
+            <VBox spacing="10.0" style="-fx-background-color: white;" HBox.hgrow="ALWAYS">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+               <children>
+                  <Label style="-fx-text-fill: black;" text="">
+                     <font><Font size="24.0" /></font>
+                  </Label>
+                  <Label style="-fx-text-fill: black;" text="Average KPI">
+                     <font><Font size="12.0" /></font>
+                  </Label>
+                  <Label fx:id="lblAvgKPI" style="-fx-text-fill: black; -fx-font-weight: bold;" text="0.0">
+                     <font><Font name="System Bold" size="24.0" /></font>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+
+      <!-- Branch Evaluation Form -->
+      <VBox spacing="20.0" style="-fx-background-color: white;">
+         <padding>
+            <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+         </padding>
+         <children>
+
+            <Label style="-fx-text-fill: black; -fx-font-weight: bold;" text="Branch Evaluation">
+               <font><Font name="System Bold" size="16.0" /></font>
+            </Label>
+
+            <HBox spacing="20.0">
+               <children>
+
+                  <VBox spacing="8.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label style="-fx-text-fill: black;" text="Branch ID">
+                           <font><Font size="13.0" /></font>
+                        </Label>
+                        <TextField fx:id="txtBranchID" prefHeight="40.0" promptText="Enter branch ID"
+                                   style="-fx-background-color: white; -fx-border-color: lightgray;">
+                           <font><Font size="14.0" /></font>
+                        </TextField>
+                     </children>
+                  </VBox>
+
+                  <VBox spacing="8.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label style="-fx-text-fill: black;" text="Region">
+                           <font><Font size="13.0" /></font>
+                        </Label>
+                        <ComboBox fx:id="cmbRegion" prefHeight="40.0" prefWidth="250.0" promptText="Select region"
+                                  style="-fx-background-color: white;" />
+                     </children>
+                  </VBox>
+
+                  <VBox spacing="8.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label style="-fx-text-fill: black;" text="KPI Score (0-100)">
+                           <font><Font size="13.0" /></font>
+                        </Label>
+                        <TextField fx:id="txtKPIScore" prefHeight="40.0" promptText="e.g., 85"
+                                   style="-fx-background-color: white; -fx-border-color: lightgray;">
+                           <font><Font size="14.0" /></font>
+                        </TextField>
+                     </children>
+                  </VBox>
+
+               </children>
+            </HBox>
+
+            <VBox spacing="8.0">
+               <children>
+                  <Label style="-fx-text-fill: black;" text="Remarks / Recommendations">
+                     <font><Font size="13.0" /></font>
+                  </Label>
+                  <TextArea fx:id="txtRemarks" prefHeight="70.0"
+                            promptText="Enter performance remarks and improvement recommendations..."
+                            style="-fx-background-color: white; -fx-border-color: lightgray;">
+                     <font><Font size="14.0" /></font>
+                  </TextArea>
+               </children>
+            </VBox>
+
+            <HBox spacing="15.0">
+               <children>
+                  <Button fx:id="btnLoadData" mnemonicParsing="false" onAction="#loadBranchData"
+                          prefHeight="45.0" prefWidth="160.0"
+                          style="-fx-background-color: white; -fx-text-fill: black; -fx-border-color: lightgray;"
+                          text="Load Data">
+                     <font><Font name="System Bold" size="14.0" /></font>
+                  </Button>
+
+                  <Button fx:id="btnRanking" mnemonicParsing="false" onAction="#generateRanking"
+                          prefHeight="45.0" prefWidth="180.0"
+                          style="-fx-background-color: white; -fx-text-fill: black; -fx-border-color: lightgray;"
+                          text="Generate Ranking">
+                     <font><Font name="System Bold" size="14.0" /></font>
+                  </Button>
+
+                  <Button fx:id="btnIdentifyWeak" mnemonicParsing="false" onAction="#identifyWeakBranches"
+                          prefHeight="45.0" prefWidth="180.0"
+                          style="-fx-background-color: white; -fx-text-fill: black; -fx-border-color: lightgray;"
+                          text="Identify Weak">
+                     <font><Font name="System Bold" size="14.0" /></font>
+                  </Button>
+
+                  <Button fx:id="btnRecommend" mnemonicParsing="false" onAction="#recommendImprovements"
+                          prefHeight="45.0" prefWidth="200.0"
+                          style="-fx-background-color: white; -fx-text-fill: black; -fx-border-color: lightgray;"
+                          text="Recommend Actions">
+                     <font><Font name="System Bold" size="14.0" /></font>
+                  </Button>
+
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+
+      <!-- Branch Performance Table -->
+      <VBox spacing="15.0" style="-fx-background-color: white;" VBox.vgrow="ALWAYS">
+         <padding>
+            <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+         </padding>
+         <children>
+
+            <HBox alignment="CENTER_LEFT" spacing="20.0">
+               <children>
+                  <Label style="-fx-text-fill: black; -fx-font-weight: bold;" text="Branch Rankings" HBox.hgrow="ALWAYS">
+                     <font><Font name="System Bold" size="16.0" /></font>
+                  </Label>
+
+                  <Button mnemonicParsing="false" onAction="#refreshTable" prefHeight="35.0"
+                          style="-fx-background-color: white; -fx-border-color: lightgray; -fx-text-fill: black;"
+                          text="Refresh">
+                     <font><Font size="12.0" /></font>
+                  </Button>
+               </children>
+            </HBox>
+
+            <TableView fx:id="tblBranches" style="-fx-background-color: white;" VBox.vgrow="ALWAYS">
+               <columns>
+                  <TableColumn fx:id="colRank" prefWidth="60.0" text="Rank" />
+                  <TableColumn fx:id="colBranchID" prefWidth="100.0" text="Branch ID" />
+                  <TableColumn fx:id="colRegion" prefWidth="120.0" text="Region" />
+                  <TableColumn fx:id="colKPI" prefWidth="80.0" text="KPI Score" />
+                  <TableColumn fx:id="colStatus" prefWidth="100.0" text="Status" />
+                  <TableColumn fx:id="colRemarks" prefWidth="250.0" text="Remarks" />
+               </columns>
+            </TableView>
+
+         </children>
+      </VBox>
+
+   </children>
+</VBox>

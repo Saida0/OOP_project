@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.simulation_of_bangladesh_bank.saida.controller.ForeignAidController">
+   <padding>
+      <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+   </padding>
+   <children>
+      <!-- Page Header -->
+      <VBox spacing="5.0">
+         <children>
+            <Label text="Foreign Aid Monitoring">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label text="Monitor foreign aid and loan utilization">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      
+      <!-- Aid Overview Cards -->
+      <HBox spacing="20.0">
+         <children>
+            <VBox spacing="10.0" HBox.hgrow="ALWAYS">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+               <children>
+                  <Label text="">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label text="Total Aid Received">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <!-- Avoid leading '$' which FXML treats as a variable reference -->
+                  <Label fx:id="lblTotalAid" text="USD 0">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            
+            <VBox spacing="10.0" HBox.hgrow="ALWAYS">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+               <children>
+                  <Label text="">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label text="Active Projects">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblActiveProjects" text="0">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            
+            <VBox alignment="CENTER" spacing="10.0" HBox.hgrow="ALWAYS">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+               <children>
+                  <Label text="Overall Utilization">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblUtilization" text="0%">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <ProgressBar fx:id="progressUtilization" prefHeight="8.0" prefWidth="150.0" progress="0.0" />
+               </children>
+            </VBox>
+            
+            <VBox spacing="10.0" HBox.hgrow="ALWAYS">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+               <children>
+                  <Label text="">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label text="Bottlenecks">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblBottlenecks" text="0">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      
+      <!-- Aid Entry Form -->
+      <VBox spacing="20.0">
+         <padding>
+            <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+         </padding>
+         <children>
+            <Label text="Aid/Loan Project Tracking">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            
+            <HBox spacing="20.0">
+               <children>
+                  <VBox spacing="8.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="Project Name">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtProjectName" prefHeight="40.0" promptText="Enter project name" />
+                     </children>
+                  </VBox>
+                  
+                  <VBox spacing="8.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="Donor Agency">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="cmbDonorAgency" prefHeight="40.0" prefWidth="250.0" promptText="Select donor" />
+                     </children>
+                  </VBox>
+                  
+                  <VBox spacing="8.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="Aid Amount ($)">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtAidAmount" prefHeight="40.0" promptText="Enter aid amount" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            
+            <HBox spacing="20.0">
+               <children>
+                  <VBox spacing="8.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="Utilization Status">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="cmbUtilizationStatus" prefHeight="40.0" prefWidth="250.0" promptText="Select status" />
+                     </children>
+                  </VBox>
+                  
+                  <VBox spacing="8.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="Amount Utilized ($)">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtAmountUtilized" prefHeight="40.0" promptText="Enter utilized amount" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            
+            <HBox spacing="15.0">
+               <children>
+                  <Button fx:id="btnValidate" mnemonicParsing="false" onAction="#validateAidUse" prefHeight="45.0" prefWidth="180.0" text="Validate Aid Use">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnReport" mnemonicParsing="false" onAction="#generateAidReport" prefHeight="45.0" prefWidth="180.0" text="Generate Report">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnBottleneck" mnemonicParsing="false" onAction="#identifyBottlenecks" prefHeight="45.0" prefWidth="200.0" text="Identify Bottlenecks">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      
+      <!-- Aid Projects Table -->
+      <VBox spacing="15.0" VBox.vgrow="ALWAYS">
+         <padding>
+            <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+         </padding>
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="20.0">
+               <children>
+                  <Label text="Aid Projects" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Button mnemonicParsing="false" onAction="#refreshTable" prefHeight="35.0" text="Refresh">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            
+            <TableView fx:id="tblAidProjects" VBox.vgrow="ALWAYS" style="-fx-background-color: transparent;">
+               <columns>
+                  <TableColumn fx:id="colProject" prefWidth="180.0" text="Project Name" />
+                  <TableColumn fx:id="colDonor" prefWidth="130.0" text="Donor Agency" />
+                  <TableColumn fx:id="colAmount" prefWidth="120.0" text="Aid Amount" />
+                  <TableColumn fx:id="colUtilized" prefWidth="120.0" text="Utilized" />
+                  <!-- Avoid leading '%' in text to prevent FXML ResourceBundle resolution issues -->
+                  <TableColumn fx:id="colPercent" prefWidth="80.0" text="Percent (%)" />
+                  <TableColumn fx:id="colStatus" prefWidth="100.0" text="Status" />
+               </columns>
+            </TableView>
+         </children>
+      </VBox>
+   </children>
+</VBox>

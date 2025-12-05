@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.simulation_of_bangladesh_bank.saida.controller.FiscalCoordinationController">
+   <padding>
+      <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+   </padding>
+   <children>
+      <!-- Page Header -->
+      <VBox spacing="5.0">
+         <children>
+            <Label text="Fiscal-Monetary Policy Coordination">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label text="Coordinate fiscal and monetary policies with Bangladesh Bank">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      
+      <!-- Policy Status Cards -->
+      <HBox spacing="20.0">
+         <children>
+            <VBox alignment="CENTER" spacing="15.0" HBox.hgrow="ALWAYS">
+               <padding>
+                  <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+               </padding>
+               <children>
+                  <Label text="">
+                     <font>
+                        <Font size="32.0" />
+                     </font>
+                  </Label>
+                  <Label text="Fiscal Policy Stance">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblFiscalStance" text="Not Set">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            
+            <VBox alignment="CENTER" spacing="15.0" HBox.hgrow="ALWAYS">
+               <padding>
+                  <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+               </padding>
+               <children>
+                  <Label text="">
+                     <font>
+                        <Font size="32.0" />
+                     </font>
+                  </Label>
+                  <Label text="Monetary Policy Status">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblMonetaryStatus" text="Not Loaded">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            
+            <VBox alignment="CENTER" spacing="15.0" HBox.hgrow="ALWAYS">
+               <padding>
+                  <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+               </padding>
+               <children>
+                  <Label text="">
+                     <font>
+                        <Font size="32.0" />
+                     </font>
+                  </Label>
+                  <Label text="Coordination Status">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblCoordinationStatus" text="Pending">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      
+      <!-- Coordination Form -->
+      <VBox spacing="20.0">
+         <padding>
+            <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+         </padding>
+         <children>
+            <Label text="Policy Coordination">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            
+            <HBox spacing="20.0">
+               <children>
+                  <VBox spacing="8.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="Fiscal Policy Stance">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="cmbFiscalStance" prefHeight="40.0" prefWidth="300.0" promptText="Select fiscal policy stance" />
+                     </children>
+                  </VBox>
+                  
+                  <VBox spacing="8.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="Monetary Policy Status">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="cmbMonetaryStatus" prefHeight="40.0" prefWidth="300.0" promptText="Select monetary policy status" />
+                     </children>
+                  </VBox>
+                  
+                  <VBox spacing="8.0">
+                     <children>
+                        <Label text="Coordination Date">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <DatePicker fx:id="dpCoordinationDate" prefHeight="40.0" prefWidth="180.0" promptText="Select date" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            
+            <VBox spacing="8.0">
+               <children>
+                  <Label text="Coordination Agenda / Notes">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="txtAgenda" prefHeight="100.0" promptText="Enter coordination meeting agenda, notes, and action items..." />
+               </children>
+            </VBox>
+            
+            <HBox spacing="15.0">
+               <children>
+                  <Button fx:id="btnLoadPolicy" mnemonicParsing="false" onAction="#loadMonetaryPolicy" prefHeight="45.0" prefWidth="200.0" text="Load BB Policy">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnMatch" mnemonicParsing="false" onAction="#matchFiscalPolicy" prefHeight="45.0" prefWidth="180.0" text="Match Policies">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnAgenda" mnemonicParsing="false" onAction="#generateCoordinationAgenda" prefHeight="45.0" prefWidth="200.0" text="Generate Agenda">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      
+      <!-- Coordination History Table -->
+      <VBox spacing="15.0" VBox.vgrow="ALWAYS">
+         <padding>
+            <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+         </padding>
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="20.0">
+               <children>
+                  <Label text="Coordination History" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Button mnemonicParsing="false" onAction="#refreshTable" prefHeight="35.0" text="Refresh">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            
+            <TableView fx:id="tblCoordination" VBox.vgrow="ALWAYS">
+               <columns>
+                  <TableColumn fx:id="colDate" prefWidth="120.0" text="Date" />
+                  <TableColumn fx:id="colFiscal" prefWidth="180.0" text="Fiscal Stance" />
+                  <TableColumn fx:id="colMonetary" prefWidth="180.0" text="Monetary Status" />
+                  <TableColumn fx:id="colStatus" prefWidth="120.0" text="Alignment" />
+                  <TableColumn fx:id="colNotes" prefWidth="200.0" text="Notes" />
+               </columns>
+            </TableView>
+         </children>
+      </VBox>
+   </children>
+</VBox>

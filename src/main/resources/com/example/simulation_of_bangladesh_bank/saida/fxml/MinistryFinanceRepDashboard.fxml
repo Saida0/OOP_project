@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.simulation_of_bangladesh_bank.saida.controller.MinistryFinanceRepDashboardController">
+   <children>
+      <!-- Left Sidebar -->
+      <VBox prefHeight="700.0" prefWidth="280.0" spacing="0.0">
+         <children>
+            <!-- Logo Section -->
+            <VBox alignment="CENTER" prefHeight="120.0" spacing="5.0">
+               <padding>
+                  <Insets bottom="15.0" left="20.0" right="20.0" top="15.0" />
+               </padding>
+               <children>
+                  <Label text="">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Label>
+                  <Label text="Ministry of Finance">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label text="Representative Portal">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            
+            <!-- Navigation Menu -->
+            <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" VBox.vgrow="ALWAYS">
+               <content>
+                  <VBox spacing="5.0">
+                     <padding>
+                        <Insets bottom="10.0" left="15.0" right="15.0" top="20.0" />
+                     </padding>
+                     <children>
+                        <!-- Dashboard -->
+                        <Button fx:id="btnDashboard" alignment="CENTER_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#showDashboard" prefHeight="45.0" prefWidth="250.0" text="Dashboard">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        
+                        <Separator prefWidth="200.0">
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                        </Separator>
+                        
+                        <Label text="FISCAL OPERATIONS">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                        </Label>
+                        
+                        <!-- Goal 1: Revenue Monitoring -->
+                        <Button fx:id="btnRevenue" alignment="CENTER_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#showRevenueMonitoring" prefHeight="45.0" prefWidth="250.0" text="Revenue Monitoring">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        
+                        <!-- Goal 2: Expenditure Control -->
+                        <Button fx:id="btnExpenditure" alignment="CENTER_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#showExpenditureControl" prefHeight="45.0" prefWidth="250.0" text="Expenditure Control">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        
+                        <!-- Goal 3: Public Debt -->
+                        <Button fx:id="btnDebt" alignment="CENTER_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#showPublicDebt" prefHeight="45.0" prefWidth="250.0" text="Public Debt Mgmt">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        
+                        <!-- Goal 4: Fiscal Coordination -->
+                        <Button fx:id="btnCoordination" alignment="CENTER_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#showFiscalCoordination" prefHeight="45.0" prefWidth="250.0" text="Policy Coordination">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        
+                        <Separator prefWidth="200.0">
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                        </Separator>
+                        
+                        <Label text="BUDGET &amp; AID">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                        </Label>
+                        
+                        <!-- Goal 5: Foreign Aid -->
+                        <Button fx:id="btnAid" alignment="CENTER_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#showForeignAid" prefHeight="45.0" prefWidth="250.0" text="Foreign Aid Monitor">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        
+                        <!-- Goal 6: Budget Management -->
+                        <Button fx:id="btnBudget" alignment="CENTER_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#showBudgetManagement" prefHeight="45.0" prefWidth="250.0" text="Budget Management">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        
+                        <!-- Goal 7: Cash Balance -->
+                        <Button fx:id="btnCash" alignment="CENTER_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#showCashBalance" prefHeight="45.0" prefWidth="250.0" text="Cash Balance">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        
+                        <!-- Goal 8: Reform Monitoring -->
+                        <Button fx:id="btnReform" alignment="CENTER_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#showReformMonitoring" prefHeight="45.0" prefWidth="250.0" text="Reform Programs">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+               </content>
+            </ScrollPane>
+            
+            <!-- Logout Button -->
+            <VBox alignment="CENTER" prefHeight="70.0">
+               <padding>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </padding>
+               <children>
+                  <Button fx:id="btnLogout" alignment="CENTER" mnemonicParsing="false" onAction="#handleLogout" prefHeight="40.0" prefWidth="250.0" text="Logout">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+      
+      <!-- Main Content Area -->
+      <VBox layoutX="280.0" prefHeight="700.0" prefWidth="920.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="280.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <!-- Top Header Bar -->
+            <HBox alignment="CENTER_LEFT" prefHeight="70.0" spacing="20.0">
+               <padding>
+                  <Insets left="30.0" right="30.0" />
+               </padding>
+               <children>
+                  <VBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label fx:id="lblPageTitle" text="Dashboard">
+                           <font>
+                              <Font name="System Bold" size="22.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblPageSubtitle" text="Welcome to Ministry of Finance Portal">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER_RIGHT">
+                     <children>
+                        <Label fx:id="lblUserName" text="Representative Name">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblDepartment" text="Department">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            
+            <!-- Content Area (Dynamic) -->
+            <ScrollPane fx:id="contentScrollPane" fitToWidth="true" hbarPolicy="NEVER" VBox.vgrow="ALWAYS">
+               <content>
+                  <VBox fx:id="contentArea" spacing="20.0">
+                     <padding>
+                        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                     </padding>
+                     <children>
+                        <!-- Statistics Cards Row -->
+                        <HBox spacing="20.0">
+                           <children>
+                              <!-- Card 1: Revenue Status -->
+                              <VBox alignment="CENTER_LEFT" prefHeight="120.0" prefWidth="200.0" spacing="10.0">
+                                 <padding>
+                                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                 </padding>
+                                 <children>
+                                    <Label text="">
+                                       <font>
+                                          <Font size="28.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblRevenueTotal" text="৳0">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Total Revenue">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              
+                              <!-- Card 2: Expenditure -->
+                              <VBox alignment="CENTER_LEFT" prefHeight="120.0" prefWidth="200.0" spacing="10.0">
+                                 <padding>
+                                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                 </padding>
+                                 <children>
+                                    <Label text="">
+                                       <font>
+                                          <Font size="28.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblExpenditureTotal" text="৳0">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Total Expenditure">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              
+                              <!-- Card 3: Public Debt -->
+                              <VBox alignment="CENTER_LEFT" prefHeight="120.0" prefWidth="200.0" spacing="10.0">
+                                 <padding>
+                                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                 </padding>
+                                 <children>
+                                    <Label text="">
+                                       <font>
+                                          <Font size="28.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblDebtTotal" text="৳0">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Outstanding Debt">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              
+                              <!-- Card 4: Cash Balance -->
+                              <VBox alignment="CENTER_LEFT" prefHeight="120.0" prefWidth="200.0" spacing="10.0">
+                                 <padding>
+                                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                 </padding>
+                                 <children>
+                                    <Label text="">
+                                       <font>
+                                          <Font size="28.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblCashBalance" text="৳0">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Cash Balance">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        
+                        <!-- Quick Actions Section -->
+                        <VBox spacing="15.0">
+                           <padding>
+                              <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+                           </padding>
+                           <children>
+                              <Label text="Quick Actions">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <HBox spacing="15.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#showRevenueMonitoring" prefHeight="80.0" prefWidth="180.0" text="Monitor&#10;Revenue">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Button>
+                                    <Button mnemonicParsing="false" onAction="#showExpenditureControl" prefHeight="80.0" prefWidth="180.0" text="Authorize&#10;Expenditure">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Button>
+                                    <Button mnemonicParsing="false" onAction="#showBudgetManagement" prefHeight="80.0" prefWidth="180.0" text="Budget&#10;Management">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Button>
+                                    <Button mnemonicParsing="false" onAction="#showFiscalCoordination" prefHeight="80.0" prefWidth="180.0" text="Policy&#10;Coordination">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        
+                        <!-- System Status Section -->
+                        <VBox spacing="15.0">
+                           <padding>
+                              <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+                           </padding>
+                           <children>
+                              <Label text="Fiscal Status Overview">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <HBox spacing="30.0">
+                                 <children>
+                                    <VBox spacing="5.0">
+                                       <children>
+                                          <Label text="Foreign Aid Status">
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lblAidStatus" text="On Track">
+                                             <font>
+                                                <Font name="System Bold" size="16.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                    <VBox spacing="5.0">
+                                       <children>
+                                          <Label text="Reform Programs">
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lblReformCount" text="0 Active">
+                                             <font>
+                                                <Font name="System Bold" size="16.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                    <VBox spacing="5.0">
+                                       <children>
+                                          <Label text="Pending Approvals">
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lblPendingApprovals" text="0 Items">
+                                             <font>
+                                                <Font name="System Bold" size="16.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </content>
+            </ScrollPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.simulation_of_bangladesh_bank.saida.controller.CommercialBankManagerDashboardController">
+   <children>
+      <!-- Left Sidebar -->
+      <VBox prefHeight="700.0" prefWidth="280.0" spacing="0.0">
+         <children>
+            <!-- Logo Section -->
+            <VBox alignment="CENTER" prefHeight="120.0" spacing="5.0">
+               <padding>
+                  <Insets bottom="15.0" left="20.0" right="20.0" top="15.0" />
+               </padding>
+               <children>
+                  <Label text="" style="-fx-font-size: 36; -fx-text-fill: #000000;" />
+                  <Label text="Commercial Bank" style="-fx-font-size: 18; -fx-text-fill: #000000;" />
+                  <Label text="Manager Portal" style="-fx-font-size: 12; -fx-text-fill: #000000;" />
+               </children>
+            </VBox>
+            
+            <!-- Navigation Menu -->
+            <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" VBox.vgrow="ALWAYS">
+               <content>
+                  <VBox spacing="5.0">
+                     <padding>
+                        <Insets bottom="10.0" left="15.0" right="15.0" top="20.0" />
+                     </padding>
+                     <children>
+                        <Button fx:id="btnDashboard" alignment="CENTER_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#showDashboard" prefHeight="45.0" prefWidth="250.0" text="Dashboard" style="-fx-font-size: 18; -fx-text-fill: #000000;" />
+                        <Separator prefWidth="200.0">
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                        </Separator>
+                        <Label text="OPERATIONS" style="-fx-font-size: 11; -fx-text-fill: #000000;">
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                        </Label>
+                        <Button fx:id="btnSLR" alignment="CENTER_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#showSLRCompliance" prefHeight="45.0" prefWidth="250.0" text="SLR Compliance" style="-fx-font-size: 18; -fx-text-fill: #000000;" />
+                        <Button fx:id="btnLoan" alignment="CENTER_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#showLoanApproval" prefHeight="45.0" prefWidth="250.0" text="Loan Approval" style="-fx-font-size: 14; -fx-text-fill: #000000;" />
+                        <Button fx:id="btnLiquidity" alignment="CENTER_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#showLiquidityManagement" prefHeight="45.0" prefWidth="250.0" text="Liquidity Mgmt" style="-fx-font-size: 14; -fx-text-fill: #000000;" />
+                        <Button fx:id="btnStrategy" alignment="CENTER_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#showMonetaryStrategy" prefHeight="45.0" prefWidth="250.0" text="Monetary Strategy" style="-fx-font-size: 14; -fx-text-fill: #000000;" />
+                        <Separator prefWidth="200.0">
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                        </Separator>
+                        <Label text="COMPLIANCE" style="-fx-font-size: 11; -fx-text-fill: #000000;">
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                        </Label>
+                        <Button fx:id="btnCAR" alignment="CENTER_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#showCARMonitoring" prefHeight="45.0" prefWidth="250.0" text="CAR Monitoring" style="-fx-font-size: 14; -fx-text-fill: #000000;" />
+                        <Button fx:id="btnAML" alignment="CENTER_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#showAMLCompliance" prefHeight="45.0" prefWidth="250.0" text="AML Compliance" style="-fx-font-size: 14; -fx-text-fill: #000000;" />
+                        <Button fx:id="btnInterbank" alignment="CENTER_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#showInterbankOps" prefHeight="45.0" prefWidth="250.0" text="Interbank Ops" style="-fx-font-size: 14; -fx-text-fill: #000000;" />
+                        <Button fx:id="btnBranch" alignment="CENTER_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#showBranchPerformance" prefHeight="45.0" prefWidth="250.0" text="Branch Performance" style="-fx-font-size: 14; -fx-text-fill: #000000;" />
+                     </children>
+                  </VBox>
+               </content>
+            </ScrollPane>
+            
+            <!-- Logout Button -->
+            <VBox alignment="CENTER" prefHeight="70.0">
+               <padding>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </padding>
+               <children>
+                  <Button fx:id="btnLogout" alignment="CENTER" mnemonicParsing="false" onAction="#handleLogout" prefHeight="40.0" prefWidth="250.0" text="Logout" style="-fx-font-size: 14; -fx-text-fill: #000000;" />
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+      
+      <!-- Main Content Area -->
+      <VBox layoutX="280.0" prefHeight="700.0" prefWidth="920.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="280.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <!-- Top Header Bar -->
+            <HBox alignment="CENTER_LEFT" prefHeight="70.0" spacing="20.0">
+               <padding>
+                  <Insets left="30.0" right="30.0" />
+               </padding>
+               <children>
+                  <VBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label fx:id="lblPageTitle" text="Dashboard" style="-fx-font-size: 22; -fx-text-fill: #000000;" />
+                        <Label fx:id="lblPageSubtitle" text="Welcome to Commercial Bank Manager Portal" style="-fx-font-size: 12; -fx-text-fill: #000000;" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER_RIGHT">
+                     <children>
+                        <Label fx:id="lblUserName" text="Manager Name" style="-fx-font-size: 14; -fx-text-fill: #000000;" />
+                        <Label fx:id="lblBankName" text="Bank Name" style="-fx-font-size: 11; -fx-text-fill: #000000;" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            
+            <!-- Content Area (Dynamic) -->
+            <ScrollPane fx:id="contentScrollPane" fitToWidth="true" hbarPolicy="NEVER" VBox.vgrow="ALWAYS">
+               <content>
+                  <VBox fx:id="contentArea" spacing="20.0">
+                     <padding>
+                        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                     </padding>
+                     <children>
+                        <!-- Statistics Cards Row -->
+                        <HBox spacing="20.0">
+                           <children>
+                              <VBox alignment="CENTER_LEFT" prefHeight="120.0" prefWidth="200.0" spacing="10.0">
+                                 <padding>
+                                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                 </padding>
+                                 <children>
+                                    <Label text="" style="-fx-font-size: 28; -fx-text-fill: #000000;" />
+                                    <Label fx:id="lblSLRCount" text="0" style="-fx-font-size: 24; -fx-text-fill: #000000;" />
+                                    <Label text="SLR Records" style="-fx-font-size: 12; -fx-text-fill: #000000;" />
+                                 </children>
+                              </VBox>
+                              
+                              <VBox alignment="CENTER_LEFT" prefHeight="120.0" prefWidth="200.0" spacing="10.0">
+                                 <padding>
+                                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                 </padding>
+                                 <children>
+                                    <Label text="" style="-fx-font-size: 28; -fx-text-fill: #000000;" />
+                                    <Label fx:id="lblLoanCount" text="0" style="-fx-font-size: 24; -fx-text-fill: #000000;" />
+                                    <Label text="Loan Applications" style="-fx-font-size: 12; -fx-text-fill: #000000;" />
+                                 </children>
+                              </VBox>
+                              
+                              <VBox alignment="CENTER_LEFT" prefHeight="120.0" prefWidth="200.0" spacing="10.0">
+                                 <padding>
+                                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                 </padding>
+                                 <children>
+                                    <Label text="" style="-fx-font-size: 28; -fx-text-fill: #000000;" />
+                                    <Label fx:id="lblCARCount" text="0" style="-fx-font-size: 24; -fx-text-fill: #000000;" />
+                                    <Label text="CAR Records" style="-fx-font-size: 12; -fx-text-fill: #000000;" />
+                                 </children>
+                              </VBox>
+                              
+                              <VBox alignment="CENTER_LEFT" prefHeight="120.0" prefWidth="200.0" spacing="10.0">
+                                 <padding>
+                                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                 </padding>
+                                 <children>
+                                    <Label text="" style="-fx-font-size: 28; -fx-text-fill: #000000;" />
+                                    <Label fx:id="lblAMLCount" text="0" style="-fx-font-size: 24; -fx-text-fill: #000000;" />
+                                    <Label text="AML Cases" style="-fx-font-size: 12; -fx-text-fill: #000000;" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        
+                        <!-- Quick Actions Section -->
+                        <VBox spacing="15.0">
+                           <padding>
+                              <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+                           </padding>
+                           <children>
+                              <Label text="Quick Actions" style="-fx-font-size: 16; -fx-text-fill: #000000;" />
+                              <HBox spacing="15.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#showSLRCompliance" prefHeight="80.0" prefWidth="180.0" text="Check SLR&#10;Compliance" style="-fx-font-size: 13; -fx-text-fill: #000000;" />
+                                    <Button mnemonicParsing="false" onAction="#showLoanApproval" prefHeight="80.0" prefWidth="180.0" text="Process Loan&#10;Application" style="-fx-font-size: 13; -fx-text-fill: #000000;" />
+                                    <Button mnemonicParsing="false" onAction="#showCARMonitoring" prefHeight="80.0" prefWidth="180.0" text="Monitor&#10;CAR" style="-fx-font-size: 13; -fx-text-fill: #000000;" />
+                                    <Button mnemonicParsing="false" onAction="#showAMLCompliance" prefHeight="80.0" prefWidth="180.0" text="Review AML&#10;Cases" style="-fx-font-size: 13; -fx-text-fill: #000000;" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        
+                        <!-- Recent Activity Section -->
+                        <VBox spacing="15.0">
+                           <padding>
+                              <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+                           </padding>
+                           <children>
+                              <Label text="System Status" style="-fx-font-size: 16; -fx-text-fill: #000000;" />
+                              <HBox spacing="30.0">
+                                 <children>
+                                    <VBox spacing="5.0">
+                                       <children>
+                                          <Label text="Liquidity Status" style="-fx-font-size: 12; -fx-text-fill: #000000;" />
+                                          <Label fx:id="lblLiquidityStatus" text="Healthy" style="-fx-font-size: 16; -fx-text-fill: #000000;" />
+                                       </children>
+                                    </VBox>
+                                    <VBox spacing="5.0">
+                                       <children>
+                                          <Label text="Interbank Operations" style="-fx-font-size: 12; -fx-text-fill: #000000;" />
+                                          <Label fx:id="lblInterbankCount" text="0 Active" style="-fx-font-size: 16; -fx-text-fill: #000000;" />
+                                       </children>
+                                    </VBox>
+                                    <VBox spacing="5.0">
+                                       <children>
+                                          <Label text="Branch Evaluations" style="-fx-font-size: 12; -fx-text-fill: #000000;" />
+                                          <Label fx:id="lblBranchCount" text="0 Completed" style="-fx-font-size: 16; -fx-text-fill: #000000;" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </content>
+            </ScrollPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

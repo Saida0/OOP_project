@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="585.0" prefWidth="925.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.simulation_of_bangladesh_bank.shifat.ManageCircularsForBanksController">
+   <children>
+      <TableView fx:id="tableID" layoutX="14.0" layoutY="294.0" prefHeight="286.0" prefWidth="894.0">
+         <columns>
+            <TableColumn fx:id="circularColumn" prefWidth="137.0" text="Circular ID" />
+            <TableColumn fx:id="titleColumn" prefWidth="228.0" text="Title" />
+            <TableColumn fx:id="issueDateColumn" prefWidth="178.0" text="Issue Date" />
+            <TableColumn fx:id="expireDateColumn" prefWidth="176.0" text="Expiry Date" />
+            <TableColumn fx:id="statusColumn" prefWidth="174.0" text="Status" />
+         </columns>
+      </TableView>
+      <Text layoutX="14.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Circular ID:" />
+      <Text layoutX="14.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title:" />
+      <Text layoutX="14.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Issue Date:" />
+      <TextField fx:id="circularID1" layoutX="122.0" layoutY="28.0" />
+      <TextField fx:id="titleID1" layoutX="122.0" layoutY="60.0" />
+      <ComboBox fx:id="statusID1" layoutX="122.0" layoutY="169.0" prefWidth="150.0" />
+      <Button layoutX="95.0" layoutY="216.0" mnemonicParsing="false" onAction="#publishOnClick" text="Publish" />
+      <Line endX="-100.0" endY="210.0" layoutX="413.0" layoutY="41.0" startX="-100.0" startY="-22.0" />
+      <Text layoutX="328.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Circular ID:" />
+      <TextField fx:id="circularID2" layoutX="407.0" layoutY="28.0" />
+      <Text layoutX="328.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title:" />
+      <TextField fx:id="titleID2" layoutX="395.0" layoutY="60.0" />
+      <ComboBox fx:id="statusID2" layoutX="395.0" layoutY="100.0" prefWidth="150.0" promptText="Status" />
+      <Button layoutX="406.0" layoutY="148.0" mnemonicParsing="false" onAction="#updateOnClicnk" text="Update" />
+      <Line endX="-100.0" endY="210.0" layoutX="671.0" layoutY="41.0" startX="-100.0" startY="-22.0" />
+      <Text layoutX="588.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Circular ID:" />
+      <TextField fx:id="circularID3" layoutX="588.0" layoutY="60.0" />
+      <Button layoutX="588.0" layoutY="91.0" mnemonicParsing="false" onAction="#deleteOnClick" text="Delete" />
+      <Button layoutX="851.0" layoutY="20.0" mnemonicParsing="false" onAction="#signOut" text="Sign Out" />
+      <Text layoutX="13.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Expiry Date:" />
+      <Text layoutX="14.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status:" />
+      <DatePicker fx:id="issueDate" layoutX="122.0" layoutY="91.0" prefHeight="25.0" prefWidth="149.0" />
+      <DatePicker fx:id="expireDate" layoutX="122.0" layoutY="123.0" prefHeight="25.0" prefWidth="149.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="554.0" prefWidth="828.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.simulation_of_bangladesh_bank.shifat.DirectorofBankingRegulationController">
+   <children>
+      <Button layoutX="335.0" layoutY="35.0" mnemonicParsing="false" onAction="#SuperviseCommercialBanks" text="Supervise Commercial Banks" />
+      <Button layoutX="320.0" layoutY="85.0" mnemonicParsing="false" onAction="#ManageBankComplianceReports" text="Manage Bank Compliance Reports" />
+      <Button layoutX="339.0" layoutY="147.0" mnemonicParsing="false" onAction="#ManageBankAuditResults" text="Manage Bank Audit Results" />
+      <Button layoutX="350.0" layoutY="199.0" mnemonicParsing="false" onAction="#ManageLoanRequests" text="Manage Loan Requests" />
+      <Button layoutX="346.0" layoutY="247.0" mnemonicParsing="false" onAction="#ManagePenaltyRecords" text="Manage Penalty Records" />
+      <Button layoutX="333.0" layoutY="303.0" mnemonicParsing="false" onAction="#ManageInspectionSchedules" text="Manage Inspection Schedules" />
+      <Button layoutX="313.0" layoutY="357.0" mnemonicParsing="false" onAction="#ManageAnnualPerformanceReports" text="Manage Annual Performance Reports" />
+      <Button layoutX="339.0" layoutY="421.0" mnemonicParsing="false" onAction="#ManageircularsforBanks" text="Manage Circulars for Banks" />
+      <Text layoutX="25.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome DBR!" textAlignment="CENTER" underline="true" wrappingWidth="242.00000488758087">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Text>
+      <Button layoutX="673.0" layoutY="35.0" mnemonicParsing="false" onAction="#signOut" prefHeight="50.0" prefWidth="108.0" text="Sign Out" />
+   </children>
+</AnchorPane>

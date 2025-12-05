@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="633.0" prefWidth="877.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.simulation_of_bangladesh_bank.shifat.ManageInspectionSchedulesController">
+   <children>
+      <Text layoutX="17.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inspection ID:" />
+      <Text layoutX="17.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bank Name:" />
+      <Text layoutX="15.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inspection Date:" />
+      <Text layoutX="15.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inspector Name:" />
+      <Text layoutX="17.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status:" />
+      <Button layoutX="790.0" layoutY="20.0" mnemonicParsing="false" onAction="#signoutOnAction" text="Sign Out" />
+      <Button layoutX="112.0" layoutY="210.0" mnemonicParsing="false" onAction="#addOnAction" text="Add Schedule" />
+      <TextField fx:id="inspectionID1" layoutX="113.0" layoutY="20.0" />
+      <TextField fx:id="bankName1" layoutX="113.0" layoutY="53.0" />
+      <TextField fx:id="inspectorName" layoutX="113.0" layoutY="125.0" />
+      <ComboBox fx:id="StatusID1" layoutX="75.0" layoutY="162.0" prefWidth="150.0" />
+      <Line endX="-40.0" endY="174.0" layoutX="378.0" layoutY="54.0" startX="-40.0" startY="-36.0" />
+      <Text layoutX="349.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bank Name:" />
+      <TextField fx:id="bankName2" layoutX="447.0" layoutY="56.0" />
+      <Button layoutX="467.0" layoutY="198.0" mnemonicParsing="false" onAction="#updateOnAction" text="Update" />
+      <Text layoutX="351.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inspection ID:" />
+      <TextField fx:id="inspectionID2" layoutX="447.0" layoutY="20.0" />
+      <Line endX="-40.0" endY="162.0" layoutX="667.0" layoutY="62.0" startX="-40.0" startY="-41.0" />
+      <TableView fx:id="tableview" layoutX="13.0" layoutY="276.0" prefHeight="350.0" prefWidth="860.0">
+         <columns>
+            <TableColumn fx:id="inspectionColumn" prefWidth="118.0" text="Inspection ID" />
+            <TableColumn fx:id="nameColumn" prefWidth="196.0" text="Bank Name" />
+            <TableColumn fx:id="dateColumn" prefWidth="170.0" text="Inspection Date" />
+            <TableColumn fx:id="inspectorNameColumn" prefWidth="155.0" text="Inspector Name" />
+            <TableColumn fx:id="statusColumn" prefWidth="220.0" text="Status" />
+         </columns>
+      </TableView>
+      <Text layoutX="640.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inspection ID:" />
+      <TextField fx:id="inspectionID3" layoutX="640.0" layoutY="48.0" prefHeight="25.0" prefWidth="142.0" />
+      <Button layoutX="686.0" layoutY="81.0" mnemonicParsing="false" onAction="#deleteOnAction" text="Delete" />
+      <DatePicker fx:id="inspectionDate" layoutX="113.0" layoutY="89.0" prefHeight="25.0" prefWidth="149.0" />
+      <Text layoutX="349.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inspection Date:" />
+      <Text layoutX="349.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inspector Name:" />
+      <Text layoutX="351.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status:" />
+      <TextField fx:id="inspectorName2" layoutX="447.0" layoutY="125.0" />
+      <ComboBox fx:id="StatusID2" layoutX="409.0" layoutY="162.0" prefWidth="150.0" />
+      <DatePicker fx:id="inspectionDate2" layoutX="447.0" layoutY="89.0" prefHeight="25.0" prefWidth="149.0" />
+   </children>
+</AnchorPane>
