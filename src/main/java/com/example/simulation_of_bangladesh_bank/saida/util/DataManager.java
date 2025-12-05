@@ -127,9 +127,45 @@ public class DataManager {
 
     /**
      * Loads users from binary file.
+     * If the file contains data from an old package structure, it will be recreated.
      */
+    @SuppressWarnings("unchecked")
     public static List<User> loadUsers() {
-        return loadFromFile(USERS_FILE);
+        File file = new File(getFilePath(USERS_FILE));
+        if (!file.exists()) {
+            return new ArrayList<>();
+        }
+        
+        try (ObjectInputStream ois = new ObjectInputStream(
+                new FileInputStream(file))) {
+            return (List<User>) ois.readObject();
+        } catch (ClassNotFoundException e) {
+            // Handle package name mismatch - old data with different package structure
+            System.err.println("⚠️  Detected incompatible user data format. Recreating users file...");
+            System.err.println("   Error: " + e.getMessage());
+            
+            // Backup old file
+            File backupFile = new File(getFilePath("users.bin.backup"));
+            if (file.exists()) {
+                file.renameTo(backupFile);
+                System.out.println("   Old users file backed up as: users.bin.backup");
+            }
+            
+            // Reinitialize with default users
+            initializeDefaultUsers();
+            
+            // Try loading again after recreation
+            try (ObjectInputStream ois2 = new ObjectInputStream(
+                    new FileInputStream(new File(getFilePath(USERS_FILE))))) {
+                return (List<User>) ois2.readObject();
+            } catch (IOException | ClassNotFoundException e2) {
+                System.err.println("Error loading recreated users file: " + e2.getMessage());
+                return new ArrayList<>();
+            }
+        } catch (IOException e) {
+            System.err.println("Error loading from file " + USERS_FILE + ": " + e.getMessage());
+            return new ArrayList<>();
+        }
     }
 
     /**
@@ -259,6 +295,18 @@ public class DataManager {
                 "Bangladesh Bank - Banking Regulation Department"
             );
             defaultUsers.add(dbr);
+
+            User fed = new User(
+                "USR006",
+                "fed",
+                "fed123",
+                "Sara Mehejabin ",
+                "Foreign Exchange Department",
+                "dbr@bb.org.bd",
+                "+880-2-9530002",
+                "Bangladesh Bank - Foreign Exchange Department"
+            );
+            defaultUsers.add(fed);
             
             saveUsers(defaultUsers);
             System.out.println("Default users initialized successfully.");
@@ -282,6 +330,10 @@ public class DataManager {
             System.out.println("User 5 - Director of Banking Regulation (Shifat):");
             System.out.println("  Username: dbr");
             System.out.println("  Password: dbr123");
+            System.out.println("════════════════════════════════════════");
+            System.out.println("User 6 - Foreign Exchange Department:");
+            System.out.println("  Username: fed");
+            System.out.println("  Password: fed123");
             System.out.println("════════════════════════════════════════");
         }
     }

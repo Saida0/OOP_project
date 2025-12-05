@@ -49,7 +49,7 @@
                         <Font size="13.0" />
                      </font>
                   </Label>
-                  <ComboBox fx:id="userTypeComboBox" prefHeight="45.0" prefWidth="320.0" promptText="Choose your role..." />
+                  <ComboBox fx:id="userTypeComboBox" editable="false" prefHeight="45.0" prefWidth="320.0" promptText="Choose your role..." />
                </children>
             </VBox>
             

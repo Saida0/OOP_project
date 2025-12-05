@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="635.0" prefWidth="769.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="reportingDash">
+   <children>
+      <PieChart fx:id="piechart" layoutX="95.0" layoutY="76.0" prefHeight="274.0" prefWidth="423.0" />
+      <Label layoutX="91.0" layoutY="18.0" prefHeight="55.0" prefWidth="388.0" text="Reporting Dashboard:">
+         <font>
+            <Font size="39.0" />
+         </font>
+      </Label>
+      <Button layoutX="21.0" layoutY="21.0" mnemonicParsing="false" onAction="#backButton" prefHeight="26.0" prefWidth="60.0" text="Back" />
+      <Label layoutX="164.0" layoutY="94.0" prefHeight="15.0" prefWidth="306.0" text="Piechart Report">
+         <font>
+            <Font size="39.0" />
+         </font>
+      </Label>
+      <Button layoutX="665.0" layoutY="576.0" mnemonicParsing="false" onAction="#signOutButton" prefHeight="45.0" prefWidth="97.0" text="Sign Out" />
+      <TextField fx:id="currencyField" layoutX="24.0" layoutY="442.0" promptText="Currency Field" />
+      <TextField fx:id="valueField" layoutX="15.0" layoutY="504.0" promptText="Value Field" />
+      <Button layoutX="37.0" layoutY="564.0" mnemonicParsing="false" onAction="#enterbutton" prefHeight="45.0" prefWidth="97.0" text="Enter" />
+      <TableView fx:id="tableView" layoutX="307.0" layoutY="430.0" prefHeight="200.0" prefWidth="346.0">
+        <columns>
+          <TableColumn fx:id="buyrateTableView" prefWidth="167.99774169921875" text="Buy Rate " />
+          <TableColumn fx:id="exchangetableView" prefWidth="177.50228881835938" text="Exchange Rate" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

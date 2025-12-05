@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane prefHeight="484.0" prefWidth="634.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.simulation_of_bangladesh_bank.Sara.ExecuteCurrencyTrade">
+   <children>
+      <TableView fx:id="currencyTableView" layoutX="188.0" layoutY="14.0" prefHeight="113.0" prefWidth="285.0">
+        <columns>
+          <TableColumn fx:id="currencyTableColumn" prefWidth="91.0" text="Currency Pairs" />
+          <TableColumn fx:id="transactionTypeTableColumn" prefWidth="104.0" text=" Transaction type" />
+            <TableColumn fx:id="amountTableColumn" prefWidth="84.0" text="Amount" />
+            <TableColumn prefWidth="84.0" text="Rate" />
+        </columns>
+      </TableView>
+      <Button layoutX="417.0" layoutY="251.0" mnemonicParsing="false" onAction="#backOnAction" prefHeight="50.0" prefWidth="100.0" text="Back" />
+      <VBox fx:id="currencyVBox" layoutX="14.0" layoutY="142.0" prefHeight="332.0" prefWidth="389.0">
+         <children>
+            <Label prefHeight="38.0" prefWidth="80.0" text="Trade Details" />
+            <ComboBox fx:id="currencyPairComboBox" prefWidth="150.0" promptText="currencyPair" />
+            <RadioButton fx:id="sellRadioButton" layoutX="10.0" layoutY="53.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="67.0" text="Sell" />
+            <RadioButton fx:id="buyRadioButton" mnemonicParsing="false" prefHeight="18.0" prefWidth="67.0" text="Buy" />
+            <TextField fx:id="amountTextField" layoutX="10.0" layoutY="48.0" maxWidth="-Infinity" minWidth="-Infinity" text="Amount" />
+            <TextField fx:id="rateTextField" layoutX="10.0" layoutY="135.0" maxWidth="-Infinity" text="Rate" />
+            <TextField fx:id="counterPartyTextField" layoutX="10.0" layoutY="161.0" maxWidth="-Infinity" text="Counter Party" />
+            <Button mnemonicParsing="false" onAction="#newOrderOnAction" prefHeight="34.0" prefWidth="92.0" text="New Order" />
+            <Button mnemonicParsing="false" onAction="#updateOrderOnAction" prefHeight="34.0" prefWidth="92.0" text="Update Order" />
+            <Button mnemonicParsing="false" onAction="#cancelOrderOnAction" prefHeight="33.0" prefWidth="90.0" text="Cancel Order" />
+            <Button layoutX="10.0" layoutY="259.0" mnemonicParsing="false" onAction="#clearFormOrderOnAction" prefHeight="37.0" prefWidth="89.0" text="Clear Form" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

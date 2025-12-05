@@ -44,16 +44,31 @@ public class LoginController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         // Initialize user type options (including all team members' roles)
-        userTypeComboBox.setItems(FXCollections.observableArrayList(
-            "Admin",
-            "Commercial Bank Manager",
-            "Ministry of Finance Representative",
-            "Governor",
-            "Director of Banking Regulation"
-        ));
+        if (userTypeComboBox != null) {
+            userTypeComboBox.setItems(FXCollections.observableArrayList(
+                "Admin",
+                "Commercial Bank Manager",
+                "Ministry of Finance Representative",
+                "Governor",
+                "Director of Banking Regulation",
+                "Foreign Exchange Department"
+            ));
+            // Set visible row count to show all options in dropdown
+            userTypeComboBox.setVisibleRowCount(6);
+            // Make sure ComboBox is not editable
+            userTypeComboBox.setEditable(false);
+            // Make sure ComboBox is visible
+            userTypeComboBox.setVisible(true);
+            // Debug: Print to console to verify initialization
+            System.out.println("ComboBox initialized with " + userTypeComboBox.getItems().size() + " items");
+        } else {
+            System.err.println("ERROR: userTypeComboBox is null in initialize()!");
+        }
         
         // Clear error label initially
-        errorLabel.setText("");
+        if (errorLabel != null) {
+            errorLabel.setText("");
+        }
     }
 
     /**
@@ -121,6 +136,9 @@ public class LoginController implements Initializable {
                     break;
                 case "Director of Banking Regulation":
                     fxmlPath = "/com/example/simulation_of_bangladesh_bank/shifat/DirectorofBankingRegulation.fxml";
+                    break;
+                case "Foreign Exchange Department":
+                    fxmlPath = "/com/example/simulation_of_bangladesh_bank/Sara/ForeignExchangeDealer_Dash.fxml";
                     break;
                 default:
                     fxmlPath = "/com/example/simulation_of_bangladesh_bank/saida/fxml/MinistryFinanceRepDashboard.fxml";
